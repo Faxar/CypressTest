@@ -1,0 +1,37 @@
+{
+  "name": "cypresstest",
+  "version": "1.0.0",
+  "description": "Cypress Ui tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "cypress:open": "cypress open",
+    "trigger-all-tests-chrome": "cypress open --e2e --browser chrome",
+    "trigger-all-tests-headless": "npx cypress run",
+    "trigger-all-tests-headed": "cypress run --headed --browser chrome --spec 'cypress/e2e/tests'",
+    "trigger-cucumber-test": "cypress run --spec cypress/e2e/features/*",
+    "html-report": "cypress run --spec cypress/e2e/tests/* --browser chrome"
+  },
+  "keywords": [
+    "e2e",
+    "tests",
+    "cypress",
+    "automation"
+  ],
+  "author": "Vassili",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^8.0.2",
+    "cypress": "^13.1.0",
+    "cypress-mochawesome-reporter": "^3.6.0",
+    "cypress-xpath": "^2.0.1"
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^18.0.5",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "jquery": "^3.7.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": "cypress/support/**/*.{js,feature}"
+  }
+}
